@@ -1,0 +1,2 @@
+flask: gunicorn db_app:app --log-file -
+streamlit: streamlit run webpage.py
