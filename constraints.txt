@@ -1,2 +1,0 @@
-chroma-hnswlib==none
-PyPika==none
