@@ -48,13 +48,14 @@ else:
 
 
 
-st.image('logo_lucy_3.jpeg', use_column_width=True)
+
 
 # Setup page configuration
 st.set_page_config(page_title="LUCY", layout="wide", page_icon='💕')
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 
 # Titles and Main Heading
+st.image('logo_lucy_3.jpeg', use_column_width=True)
 
 st.markdown(
     """
