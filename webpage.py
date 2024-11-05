@@ -60,7 +60,7 @@ os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 # Titles and Main Heading
 # Centering the image using st.image
 # Centering the image using st.image
-st.image('logo_angosto_lucy.png', width=7, use_column_width='auto')  # This will keep the aspect ratio
+st.image('logo_angosto_lucy.png', width=5, use_column_width='auto')  # This will keep the aspect ratio
 st.markdown("<div style='text-align: center; margin-top: -20px;'></div>", unsafe_allow_html=True)  # Adjust margin if needed
 
 st.markdown(
@@ -159,7 +159,7 @@ def chat():
         # Store and display the user message
         st.session_state.messages.append({"role": "user", "content": user_message})
         with st.chat_message("user"):
-            st.markdown(user_message)
+            st.markdown(f"<div class='response-text'>{user_message}</div>", unsafe_allow_html=True)
 
       
         common_responses = {
