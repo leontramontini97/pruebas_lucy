@@ -56,11 +56,13 @@ st.set_page_config(page_title="LUCY", layout="wide", page_icon='💕')
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 
 
+
 st.markdown(
     """
     <style>
     .chat_message {
-        font-size: 16px;  
+        font-size: 18px;  /* Increase this size as needed */
+        line-height: 1.6;  /* Adjust line height for readability */
     }
     </style>
     """,
@@ -69,7 +71,7 @@ st.markdown(
 # Titles and Main Heading
 # Centering the image using st.image
 # Centering the image using st.image
-st.image('logo_angosto_lucy.png', width=50, use_column_width='auto')  # This will keep the aspect ratio
+st.image('logo_angosto_lucy.png', width=20, use_column_width='auto')  # This will keep the aspect ratio
 st.markdown("<div style='text-align: center; margin-top: -20px;'></div>", unsafe_allow_html=True)  # Adjust margin if needed
 
 st.markdown(
@@ -226,7 +228,8 @@ def chat():
                 # Display the assistant's response
                 
             
-            response_placeholder.markdown(response_text)
+            response_placeholder.markdown(f"<div class='chat_message'>{response_text}</div>", unsafe_allow_html=True)
+
         
         st.session_state.messages.append({"role": "assistant", "content": response_text})
         
