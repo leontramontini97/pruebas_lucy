@@ -112,7 +112,7 @@ question_answer_chain= create_stuff_documents_chain(llm, qa_prompt)
 
 
 
-retriever= retriever_func('V2.3.pdf')
+retriever= retriever_func('V2.4.pdf')
 
 history_aware_retriever = create_history_aware_retriever(
         llm, retriever, contextualize_q_prompt
