@@ -60,7 +60,7 @@ os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 # Titles and Main Heading
 # Centering the image using st.image
 # Centering the image using st.image
-st.image('logo_angosto_lucy.png', width=10, use_column_width='auto')  # This will keep the aspect ratio
+st.image('logo_angosto_lucy.png', width=7, use_column_width='auto')  # This will keep the aspect ratio
 st.markdown("<div style='text-align: center; margin-top: -20px;'></div>", unsafe_allow_html=True)  # Adjust margin if needed
 
 st.markdown(
@@ -139,7 +139,15 @@ def sidebar():
 # Main chat application
 def chat():
     
-
+    st.markdown(
+    """<style> 
+    .response-text { 
+        font-size: 30px; 
+        line-height: 3.2; 
+    } 
+    </style>""",
+    unsafe_allow_html=True
+)
     # Display existing chat messages
     for message in st.session_state.messages:
         with st.chat_message(message["role"]):
@@ -217,7 +225,11 @@ def chat():
                 # Display the assistant's response
                 
             
-            response_placeholder.markdown(f"<div style='font-size: 30px; line-height: 3.2;'>{response_text}</div>", unsafe_allow_html=True)
+            response_placeholder.markdown(f"<div class='response-text'>{response_text}</div>", unsafe_allow_html=True)
+
+           
+
+      
 
         
         st.session_state.messages.append({"role": "assistant", "content": response_text})
