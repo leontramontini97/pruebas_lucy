@@ -61,7 +61,7 @@ st.markdown(
     """
     <style>
     .chat_message {
-        font-size: 18px;  /* Increase this size as needed */
+        font-size: 24px;  /* Increase this size as needed */
         line-height: 1.6;  /* Adjust line height for readability */
     }
     </style>
@@ -71,7 +71,7 @@ st.markdown(
 # Titles and Main Heading
 # Centering the image using st.image
 # Centering the image using st.image
-st.image('logo_angosto_lucy.png', width=20, use_column_width='auto')  # This will keep the aspect ratio
+st.image('logo_angosto_lucy.png', width=10, use_column_width='auto')  # This will keep the aspect ratio
 st.markdown("<div style='text-align: center; margin-top: -20px;'></div>", unsafe_allow_html=True)  # Adjust margin if needed
 
 st.markdown(
