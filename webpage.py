@@ -217,7 +217,7 @@ def chat():
                 # Display the assistant's response
                 
             
-            response_placeholder.markdown(f"<div style='font-size: 18px; line-height: 1.6;'>{response_text}</div>", unsafe_allow_html=True)
+            response_placeholder.markdown(f"<div style='font-size: 30px; line-height: 3.2;'>{response_text}</div>", unsafe_allow_html=True)
 
         
         st.session_state.messages.append({"role": "assistant", "content": response_text})
