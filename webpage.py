@@ -113,6 +113,9 @@ def sidebar():
     📪 lucyabdala@gmail.com  <br>
      
     💻 [ginecologalucyabdala.com](https://ginecologalucyabdala.com/)  <br>
+
+    📍 Clínica Portoazul Aúna Cons. 414
+       Barranquilla, Colombia
     """,
     unsafe_allow_html=True
 )
@@ -120,7 +123,7 @@ def sidebar():
     """
     ---
     <div style='font-size: 12px;'>  <!-- Adjust the font size here -->
-        <strong> Disclaimer :</strong> <br>
+        <strong> Disclaimer:</strong> <br>
         Esta información es proporcionada por un asistente virtual para fines educativos. 
         No sustituye el consejo médico profesional. 
         Para una evaluación médica adecuada, consulta a tu médico.
