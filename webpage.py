@@ -75,11 +75,10 @@ st.markdown(
 # Adding margin or padding to create space between the lines
 st.markdown(
     """
-    <div style='text-align: center; align-items: center; justify-content: center;'>
-        <h6> Tu Asistente Virtual con <br>
-        Inteligencia Artificial <br>
-        Estoy aquí para resolver tus dudas <br>
-        y responder a tus preguntas! </h5>
+    <div style='text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;'>
+        <h5> Tu Asistente Virtual con <br>
+        Inteligencia Artificial <br> </h5>
+        <p style='font-size: 14px;'> Estoy aquí para resolver tus dudas y responder a tus preguntas! </p>
     </div>
     """,
     unsafe_allow_html=True,
