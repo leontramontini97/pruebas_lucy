@@ -55,7 +55,7 @@ st.set_page_config(page_title="LUCY", layout="wide", page_icon='💕')
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 
 # Titles and Main Heading
-st.image('logo_lucy_3.jpeg', height=100, use_column_width=True)
+st.image('logo_lucy_3.jpeg', width=200 )
 
 st.markdown(
     """
@@ -69,7 +69,7 @@ st.markdown(
 # Adding margin or padding to create space between the lines
 st.markdown(
     """
-    <div style='text-align: center; width: 150px; height: 150px; display: flex; align-items: center; justify-content: center; margin: 30px auto; border: 1px solid #ccc;'>
+    <div style='text-align: center; width: 150px; height: 150px; display: flex; align-items: center; justify-content: center; margin: 30px auto;'>
         <h5> Tu Asistente Virtual con 
 Inteligencia Artificial 
 Estoy aquí para resolver tus dudas 
