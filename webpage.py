@@ -56,9 +56,9 @@ os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 
 # Titles and Main Heading
 # Centering the image using st.image
-st.markdown("<div style='text-align: center;'>", unsafe_allow_html=True)
-st.image('logo_lucy_3.jpeg', width=200)
-st.markdown("</div>", unsafe_allow_html=True)
+# Centering the image using st.image
+st.image('logo_lucy_3.jpeg', width=200, use_column_width='auto')  # This will keep the aspect ratio
+st.markdown("<div style='text-align: center; margin-top: -20px;'></div>", unsafe_allow_html=True)  # Adjust margin if needed
 
 st.markdown(
     """
@@ -95,6 +95,7 @@ def sidebar():
     
     
     📞 <a href="https://wa.me/573106391610" target="_blank">Estética Íntima</a>  <br>
+
     📞 <a href="https://wa.me/573106336514" target="_blank">Ginecología</a>  <br>
     
     📪 lucyabdala@gmail.com  <br>
