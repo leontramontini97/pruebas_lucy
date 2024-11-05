@@ -69,7 +69,7 @@ st.markdown(
 # Titles and Main Heading
 # Centering the image using st.image
 # Centering the image using st.image
-st.image('logo_lucy_3.jpeg', width=100, use_column_width='auto')  # This will keep the aspect ratio
+st.image('logo_lucy_3.jpeg', width=50, use_column_width='auto')  # This will keep the aspect ratio
 st.markdown("<div style='text-align: center; margin-top: -20px;'></div>", unsafe_allow_html=True)  # Adjust margin if needed
 
 st.markdown(
