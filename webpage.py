@@ -7,16 +7,7 @@ from utils import retriever, get_session_history, rag_chain
 from langchain_core.runnables.history import RunnableWithMessageHistory
 
 
-st.markdown(
-    """
-    <style>
-    .chat_message {
-        font-size: 16px;  
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+
 
 
 # Set up logging configuration
@@ -64,6 +55,17 @@ else:
 st.set_page_config(page_title="LUCY", layout="wide", page_icon='💕')
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 
+
+st.markdown(
+    """
+    <style>
+    .chat_message {
+        font-size: 16px;  
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 # Titles and Main Heading
 # Centering the image using st.image
 # Centering the image using st.image
