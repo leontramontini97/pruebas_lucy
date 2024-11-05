@@ -142,7 +142,7 @@ def chat():
     """<style> 
     .response-text { 
         font-size: 18px; 
-        line-height: 3.2; 
+        line-height: 1.6; 
     } 
     </style>""",
     unsafe_allow_html=True
