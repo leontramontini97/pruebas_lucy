@@ -76,7 +76,7 @@ st.markdown(
 st.markdown(
     """
     <div style='text-align: center; align-items: center; justify-content: center;'>
-        <h5> Tu Asistente Virtual con <br>
+        <h6> Tu Asistente Virtual con <br>
         Inteligencia Artificial <br>
         Estoy aquí para resolver tus dudas <br>
         y responder a tus preguntas! </h5>
@@ -142,7 +142,7 @@ def chat():
     st.markdown(
     """<style> 
     .response-text { 
-        font-size: 30px; 
+        font-size: 18px; 
         line-height: 3.2; 
     } 
     </style>""",
@@ -180,11 +180,11 @@ def chat():
         response_text = common_responses.get(user_message.lower(), None)
         if response_text:
             with st.chat_message("assistant"):
-                st.markdown(response_text)
+                st.markdown(f"<div class='response-text'>{response_text}</div>", unsafe_allow_html=True)
         else:
             with st.chat_message("assistant"):
                 response_placeholder = st.empty()  # Placeholder for the response
-                response_placeholder.markdown("🤔 Estoy pensando...")
+                response_placeholder.markdown(f"<div class='response-text'> 🤔 Estoy pensando... </div>", unsafe_allow_html=True)
 
             try:
                 print("I should see this in the terminal")
