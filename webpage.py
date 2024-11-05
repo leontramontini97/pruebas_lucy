@@ -55,7 +55,14 @@ st.set_page_config(page_title="LUCY", layout="wide", page_icon='💕')
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 
 # Titles and Main Heading
-st.image('logo_lucy_3.jpeg', width=200 )
+st.markdown(
+    """
+    <div style='text-align: center;'>
+        <img src='logo_lucy_3.jpeg' width='200'>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 
 st.markdown(
     """
@@ -69,7 +76,7 @@ st.markdown(
 # Adding margin or padding to create space between the lines
 st.markdown(
     """
-    <div style='text-align: center; width: 150px; height: 150px; display: flex; align-items: center; justify-content: center; margin: 30px auto;'>
+    <div style='text-align: center; width: 150px; height: 150px; display: flex; align-items: center; justify-content: center; margin: 50px auto;'>
         <h5> Tu Asistente Virtual con 
 Inteligencia Artificial 
 Estoy aquí para resolver tus dudas 
@@ -97,8 +104,7 @@ def sidebar():
     📞 <a href="https://wa.me/573106336514" target="_blank">Ginecología</a>  <br>
     
     📪 lucyabdala@gmail.com  <br>
-    📪 info@ginecologalucyabdala.com  <br>
-    
+     
     💻 [ginecologalucyabdala.com](https://ginecologalucyabdala.com/)  <br>
     """,
     unsafe_allow_html=True
