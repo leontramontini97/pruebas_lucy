@@ -60,7 +60,7 @@ os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 # Titles and Main Heading
 # Centering the image using st.image
 # Centering the image using st.image
-st.image('logo_angosto_lucy.png', width=5, use_column_width='auto')  # This will keep the aspect ratio
+st.image('logo_angosto_lucy.png', width=2, use_column_width='auto')  # This will keep the aspect ratio
 st.markdown("<div style='text-align: center; margin-top: -20px;'></div>", unsafe_allow_html=True)  # Adjust margin if needed
 
 st.markdown(
@@ -112,7 +112,7 @@ def sidebar():
     st.sidebar.markdown(
     """
     ---
-    <div style='font-size: 12px;'>  <!-- Adjust the font size here -->
+    <div style='font-size: 16px;'>  <!-- Adjust the font size here -->
         <strong> Disclaimer:</strong> <br>
         Esta información es proporcionada por un asistente virtual para fines educativos. 
         No sustituye el consejo médico profesional. 
