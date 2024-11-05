@@ -7,6 +7,16 @@ from utils import retriever, get_session_history, rag_chain
 from langchain_core.runnables.history import RunnableWithMessageHistory
 
 
+st.markdown(
+    """
+    <style>
+    .chat_message {
+        font-size: 16px;  
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 
 # Set up logging configuration
