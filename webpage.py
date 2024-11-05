@@ -48,7 +48,7 @@ else:
 
 
 
-
+st.image('logo_lucy_3.jpeg', use_column_width=True)
 
 # Setup page configuration
 st.set_page_config(page_title="LUCY", layout="wide", page_icon='💕')
@@ -59,7 +59,7 @@ os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 st.markdown(
     """
     <div style='text-align: center;'>
-        <h2> Hola! Soy LUCY AI </h2>
+        <h2> Hola! Soy LUCY AI  </h2>
     </div>
     """,
     unsafe_allow_html=True,
@@ -68,7 +68,7 @@ st.markdown(
 # Adding margin or padding to create space between the lines
 st.markdown(
     """
-    <div style='text-align: center; width: 300px; height: 300px; display: flex; align-items: center; justify-content: center; margin: 30px auto; border: 1px solid #ccc;'>
+    <div style='text-align: center; width: 150px; height: 150px; display: flex; align-items: center; justify-content: center; margin: 30px auto; border: 1px solid #ccc;'>
         <h5> Tu Asistente Virtual con 
 Inteligencia Artificial 
 Estoy aquí para resolver tus dudas 
@@ -82,9 +82,7 @@ y responder a tus preguntas! </h5>
 # Sidebar functionalities
 def sidebar():
     
-    st.sidebar.image('logo_lucy_3.jpeg', use_column_width=True)
     
-
     # Further Assistance Information
     st.sidebar.markdown("###  ¿Necesitas más información?")
        
