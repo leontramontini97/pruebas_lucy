@@ -51,7 +51,7 @@ else:
 
 
 # Setup page configuration
-st.set_page_config(page_title="Pregúntale al bot de la Dra Lucy Abdala", layout="wide", page_icon='💕')
+st.set_page_config(page_title="LUCY", layout="wide", page_icon='💕')
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 
 # Titles and Main Heading
@@ -59,7 +59,7 @@ os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 st.markdown(
     """
     <div style='text-align: center;'>
-        <h2> Bienvenida al asistente virtual de la Dra Lucy Abdala  </h2>
+        <h2> Hola! Soy LUCY AI </h2>
     </div>
     """,
     unsafe_allow_html=True,
@@ -68,8 +68,11 @@ st.markdown(
 # Adding margin or padding to create space between the lines
 st.markdown(
     """
-    <div style='text-align: center; margin-top: 30px;'>  
-        <h5> ❤️ Resuelve tus dudas con nosotros ❤️</h5>
+    <div style='text-align: center; width: 300px; height: 300px; display: flex; align-items: center; justify-content: center; margin: 30px auto; border: 1px solid #ccc;'>
+        <h5> Tu Asistente Virtual con 
+Inteligencia Artificial 
+Estoy aquí para resolver tus dudas 
+y responder a tus preguntas! </h5>
     </div>
     """,
     unsafe_allow_html=True,
@@ -87,13 +90,15 @@ def sidebar():
        
     st.sidebar.markdown(
             """
-             📞 Ginecología: 3106336514 \n
-             📞 Ginecología estética: 3106391610 
+             📞 Estética Íntima: wa.me/573106391610  \n
+             📞 Ginecología: wa.me/573106336514  
 
              📪 lucyabdala@gmail.com \n
-             📪 info@ginecologalucyabdala.com 
-
+             
              💻 https://ginecologalucyabdala.com/
+
+             📍 Clínica Portoazul Aúna Cons. 414 
+                Barranquilla, Colombia 
 
 
             """
@@ -102,7 +107,7 @@ def sidebar():
     """
     ---
     <div style='font-size: 12px;'>  <!-- Adjust the font size here -->
-        <strong>🔔 Disclaimer 🔔:</strong> <br>
+        <strong> Disclaimer :</strong> <br>
         Esta información es proporcionada por un asistente virtual para fines educativos. 
         No sustituye el consejo médico profesional. 
         Para una evaluación médica adecuada, consulta a tu médico.
@@ -115,7 +120,7 @@ def sidebar():
     st.sidebar.markdown(
     """
     <div style='text-align: center; margin-top: 18px;'>
-        <p style='color: gray;'>Made with 🖤 by Dialogik.co, 2024. </p>
+        <p style='color: gray;'> 2024, Made with 🖤 by Dialogik.co </p>
     </div>
     """,
     unsafe_allow_html=True
@@ -144,7 +149,7 @@ def chat():
 
       
         common_responses = {
-    "hola": "¡Hola! Hablas con el asistente virtual de la Dra Lucy Abdala 🤖. Estoy acá para responderte preguntas que puedas tener en relación con los procedimientos que hace la Doctora. ¿En qué puedo ayudarte hoy?",
+    "hola": "Bienvenida a Lucy AI, Asistente Virtual con Inteligencia Artificial de la Dra. Lucy Abdala para ofrecerte mayor información con respecto a temas de tu Salud, Bienestar, Sexualidad y Estética Íntima Femenina.",
     "adiós": "¡Hasta luego! Espero haberte ayudado. 👋 👋 👋 👋",
     "gracias": "¡Con gusto! Si tienes otra consulta, estoy aquí para ayudarte 😊",
     "¿cómo estás?": "¡Estoy funcionando al 100%! 🤖 ¿En qué puedo ayudarte?",
