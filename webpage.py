@@ -55,7 +55,7 @@ st.set_page_config(page_title="LUCY", layout="wide", page_icon='💕')
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 
 # Titles and Main Heading
-st.image('logo_lucy_3.jpeg', use_column_width=True)
+st.image('logo_lucy_3.jpeg', height=100, use_column_width=True)
 
 st.markdown(
     """
@@ -88,20 +88,21 @@ def sidebar():
     st.sidebar.markdown("###  ¿Necesitas más información?")
        
     st.sidebar.markdown(
-            """
-             📞 Estética Íntima: wa.me/573106391610  \n
-             📞 Ginecología: wa.me/573106336514  
-
-             📪 lucyabdala@gmail.com \n
-             
-             💻 https://ginecologalucyabdala.com/
-
-             📍 Clínica Portoazul Aúna Cons. 414 
-                Barranquilla, Colombia 
-
-
-            """
-        )
+    """
+    
+    
+    ### ¿Necesitas más información?
+    
+    📞 <a href="https://wa.me/573106391610" target="_blank">Estética Íntima</a>  <br>
+    📞 <a href="https://wa.me/573106336514" target="_blank">Ginecología</a>  <br>
+    
+    📪 lucyabdala@gmail.com  <br>
+    📪 info@ginecologalucyabdala.com  <br>
+    
+    💻 [ginecologalucyabdala.com](https://ginecologalucyabdala.com/)  <br>
+    """,
+    unsafe_allow_html=True
+)
     st.sidebar.markdown(
     """
     ---
