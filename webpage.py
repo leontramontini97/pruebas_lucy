@@ -55,14 +55,10 @@ st.set_page_config(page_title="LUCY", layout="wide", page_icon='💕')
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 
 # Titles and Main Heading
-st.markdown(
-    """
-    <div style='text-align: center;'>
-        <img src='logo_lucy_3.jpeg' width='200'>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
+# Centering the image using st.image
+st.markdown("<div style='text-align: center;'>", unsafe_allow_html=True)
+st.image('logo_lucy_3.jpeg', width=200)
+st.markdown("</div>", unsafe_allow_html=True)
 
 st.markdown(
     """
@@ -76,11 +72,11 @@ st.markdown(
 # Adding margin or padding to create space between the lines
 st.markdown(
     """
-    <div style='text-align: center; width: 150px; height: 150px; display: flex; align-items: center; justify-content: center; margin: 50px auto;'>
-        <h5> Tu Asistente Virtual con 
-Inteligencia Artificial 
-Estoy aquí para resolver tus dudas 
-y responder a tus preguntas! </h5>
+    <div style='text-align: center; align-items: center; justify-content: center;'>
+        <h5> Tu Asistente Virtual con <br>
+        Inteligencia Artificial <br>
+        Estoy aquí para resolver tus dudas <br>
+        y responder a tus preguntas! </h5>
     </div>
     """,
     unsafe_allow_html=True,
@@ -97,8 +93,6 @@ def sidebar():
     st.sidebar.markdown(
     """
     
-    
-    ### ¿Necesitas más información?
     
     📞 <a href="https://wa.me/573106391610" target="_blank">Estética Íntima</a>  <br>
     📞 <a href="https://wa.me/573106336514" target="_blank">Ginecología</a>  <br>
