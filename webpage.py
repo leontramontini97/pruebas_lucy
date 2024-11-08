@@ -60,7 +60,12 @@ os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 # Titles and Main Heading
 # Centering the image using st.image
 # Centering the image using st.image
-st.image('logo_angosto_lucy.png', width=100, use_column_width=False)  # Adjusted width for a narrower image)  # This will keep the aspect ratio
+# Centering the image using st.image
+st.markdown("<div style='text-align: center;'>", unsafe_allow_html=True)
+st.image('logo_angosto_lucy.png', width=100, use_column_width=False)  # Adjusted width for a narrower image
+st.markdown("</div>", unsafe_allow_html=True)
+
+# Adjusted width for a narrower image)  # This will keep the aspect ratio
 st.markdown("<div style='text-align: center; margin-top: -20px;'></div>", unsafe_allow_html=True)  # Adjust margin if needed
 
 # Set up a square container
