@@ -60,33 +60,23 @@ os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 # Titles and Main Heading
 # Centering the image using st.image
 # Centering the image using st.image
-st.image('logo_angosto_lucy.png', width=2, use_column_width='auto')  # This will keep the aspect ratio
+st.image('logo_angosto_lucy.png', width=100, use_column_width=False)  # Adjusted width for a narrower image)  # This will keep the aspect ratio
 st.markdown("<div style='text-align: center; margin-top: -20px;'></div>", unsafe_allow_html=True)  # Adjust margin if needed
 
 # Set up a square container
 st.markdown(
     """
     <div style='text-align: center; width: 300px; height: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px solid #ccc; margin: 30px auto;'>
-        <img src='logo_angosto_lucy.png' style='width: 100px; height: 100px;'/>  <!-- Set both width and height to make it square -->
         <h2> Hola! Soy LUCY AI  </h2>
         <h5> Tu Asistente Virtual con <br> Inteligencia Artificial <br> </h5>
-        <p style='font-size: 14px;'> Estoy aquí para resolver tus dudas y responder a tus preguntas! </p>
+         <h5> Estoy aquí para resolver tus dudas!  <br> </h5>
     </div>
     """,
     unsafe_allow_html=True,
 )
 
 # Adding margin or padding to create space between the lines
-st.markdown(
-    """
-    <div style='text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;'>
-        <h5> Tu Asistente Virtual con <br>
-        Inteligencia Artificial <br> </h5>
-        <p style='font-size: 14px;'> Estoy aquí para resolver tus dudas y responder a tus preguntas! </p>
-    </div>
-    """,
-    unsafe_allow_html=True,
-)
+
 
 
 # Sidebar functionalities
