@@ -61,14 +61,9 @@ os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 # Centering the image using st.image
 # Centering the image using st.image
 # Centering the image using st.image
-st.markdown(
-    """
-    <div style='display: flex; justify-content: center; align-items: center; margin-top: 20px;'>
-        <img src='logo_angosto_lucy.png' alt='Logo' style='width: 100px;'>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
+st.markdown("<div style='text-align: center;'>", unsafe_allow_html=True)
+st.image('logo_angosto_lucy.png', width=100)
+st.markdown("</div>", unsafe_allow_html=True)v
 
 # Main container with centered text
 st.markdown(
