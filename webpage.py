@@ -63,10 +63,14 @@ os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 st.image('logo_angosto_lucy.png', width=2, use_column_width='auto')  # This will keep the aspect ratio
 st.markdown("<div style='text-align: center; margin-top: -20px;'></div>", unsafe_allow_html=True)  # Adjust margin if needed
 
+# Set up a square container
 st.markdown(
     """
-    <div style='text-align: center;'>
+    <div style='text-align: center; width: 300px; height: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px solid #ccc; margin: 30px auto;'>
+        <img src='logo_angosto_lucy.png' style='width: 100px; height: 100px;'/>  <!-- Set both width and height to make it square -->
         <h2> Hola! Soy LUCY AI  </h2>
+        <h5> Tu Asistente Virtual con <br> Inteligencia Artificial <br> </h5>
+        <p style='font-size: 14px;'> Estoy aquí para resolver tus dudas y responder a tus preguntas! </p>
     </div>
     """,
     unsafe_allow_html=True,
