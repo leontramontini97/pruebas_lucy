@@ -61,13 +61,29 @@ os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 # Centering the image using st.image
 # Centering the image using st.image
 # Centering the image using st.image
-st.markdown("<div style='text-align: center;'>", unsafe_allow_html=True)
-st.image('logo_angosto_lucy.png', width=100)
-st.markdown("</div>", unsafe_allow_html=True)
+
+
+
+# Rest of your Streamlit app code goes here
 
 # Main container with centered text
 st.markdown(
     """
+     <style>
+        .centered-image {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 20px;
+        }
+        .centered-image img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+    <div class="centered-image">
+        <img src="logo_angosto_lucy.png" alt="Centered Image" style="margin-top: 10px;">
+    </div>
     <div style='text-align: center; width: 300px; height: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px solid #ccc; margin: 30px auto;'>
         <h2>Hola! Soy LUCY AI</h2>
         <h5>Tu Asistente Virtual con Inteligencia Artificial</h5>
