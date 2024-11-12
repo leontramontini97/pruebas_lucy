@@ -21,7 +21,7 @@ store = {}
 
 
 
-print(f"OPENAI_API_KEY in Flask app: {new_api_key}")
+
 llm = ChatOpenAI(model_name='gpt-4o', temperature=1, openai_api_key=Config.OPENAI_API_KEY)  
 
 def get_session_history(session_id: str) -> BaseChatMessageHistory:
@@ -47,7 +47,7 @@ def retriever_func(file_path):
     all_splits = text_splitter.split_documents(data)
     
     logging.info(f"Number of documents split: {len(all_splits)}")
-    vectorstore = FAISS.from_documents(documents=all_splits, embedding=OpenAIEmbeddings(openai_api_key=new_api_key))  # Updated
+    vectorstore = FAISS.from_documents(documents=all_splits, embedding=OpenAIEmbeddings(openai_api_key=Config.OPENAI_API_KEY))  # Updated
     
     retriever = vectorstore.as_retriever(search_type="similarity", search_kwargs={"k": 3})
     logging.info("Retriever initialized successfully.")
