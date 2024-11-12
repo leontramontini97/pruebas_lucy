@@ -82,7 +82,7 @@ st.markdown(
         }
     </style>
     <div class="centered-image">
-        <img src="logo_angosto_lucy.png" alt="Centered Image" style="margin-top: 10px;">
+        <img src="./logo_angosto_lucy.png" alt="Centered Image" style="margin-top: 10px;">
     </div>
     <div style='text-align: center; width: 300px; height: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px solid #ccc; margin: 30px auto;'>
         <h2>Hola! Soy LUCY AI</h2>
