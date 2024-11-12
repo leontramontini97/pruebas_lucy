@@ -63,7 +63,7 @@ with st.container():
     cols = st.columns(9)
 
     # Display the image in the center column (col3)
-    with cols[5]:  # This is the third column (index 2)
+    with cols[4]:  # This is the third column (index 2)
         st.image("abc1.jpg",  use_column_width= True)  # Use full width of the column
 
     # Create a three-column layout for the text box
