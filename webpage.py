@@ -57,21 +57,6 @@ os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 
 
 
-# Titles and Main Heading
-# Centering the image using st.image
-# Centering the image using st.image
-# Centering the image using st.image
-
-
-
-# Create two columns: one for the image and one for the markdown
-# Centering the image above the markdown box
-# Create three columns
-# Use a container to align content in the middle of the page
-
-  # Path to your image file
-
-
 
 with st.container():
     # Create a five-column layout for the image
@@ -79,7 +64,7 @@ with st.container():
 
     # Display the image in the center column (col3)
     with cols[2]:  # This is the third column (index 2)
-        st.image("abc1.jpg", use_column_width=True)  # Use full width of the column
+        st.image("abc1.jpg", use_column_width=False, width= 80)  # Use full width of the column
 
     # Create a three-column layout for the text box
     col1, col2, col3 = st.columns([1, 2, 1])
