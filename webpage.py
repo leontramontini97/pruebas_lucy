@@ -52,7 +52,7 @@ else:
 
 
 # Setup page configuration
-st.set_page_config(page_title="LUCY", layout="wide", page_icon='💕')
+st.set_page_config(page_title="LUCY", layout="wide", page_icon='👩‍⚕️')
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 
 
@@ -90,7 +90,8 @@ with st.container():
             """
             <div style='text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; margin-top: 5 px; padding: 10px; width: 100%;'>
                 <h2>Hola! Soy LUCY AI</h2>
-                <h5>Tu Asistente Virtual con Inteligencia Artificial</h5>
+                <h5>Tu Asistente Virtual con </h5>  
+                <h5>Inteligencia Artificial </h5> 
                 <h5>Estoy aquí para resolver tus dudas!</h5>
             </div>
             """,
