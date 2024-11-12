@@ -5,7 +5,7 @@ import os
 import logging
 from utils import retriever, get_session_history, rag_chain
 from langchain_core.runnables.history import RunnableWithMessageHistory
-
+from PIL import Image
 
 
 
@@ -64,37 +64,38 @@ os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 
 
 
-# Rest of your Streamlit app code goes here
+# Create two columns: one for the image and one for the markdown
+# Centering the image above the markdown box
+# Create three columns
+# Use a container to align content in the middle of the page
 
-# Main container with centered text
-st.markdown(
-    """
-     <style>
-        .centered-image {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            height: 20px;
-        }
-        .centered-image img {
-            max-width: 100%;
-            height: auto;
-        }
-    </style>
-    <div class="centered-image">
-        <img src="./logo_lucy_3.jpeg" alt="Centered Image" style="margin-top: 10px;">
-    </div>
-    <div style='text-align: center; width: 300px; height: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px solid #ccc; margin: 30px auto;'>
-        <h2>Hola! Soy LUCY AI</h2>
-        <h5>Tu Asistente Virtual con Inteligencia Artificial</h5>
-        <h5>Estoy aquí para resolver tus dudas!</h5>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
-# Adding margin or padding to create space between the lines
+  # Path to your image file
 
 
+
+with st.container():
+    # Create a five-column layout for the image
+    cols = st.columns(5)
+
+    # Display the image in the center column (col3)
+    with cols[2]:  # This is the third column (index 2)
+        st.image("abc1.jpg", use_column_width=True)  # Use full width of the column
+
+    # Create a three-column layout for the text box
+    col1, col2, col3 = st.columns([1, 2, 1])
+
+    with col2:
+        # Display the centered text box
+        st.markdown(
+            """
+            <div style='text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px solid #ccc; margin-top: 20px; padding: 10px; width: 100%;'>
+                <h2>Hola! Soy LUCY AI</h2>
+                <h5>Tu Asistente Virtual con Inteligencia Artificial</h5>
+                <h5>Estoy aquí para resolver tus dudas!</h5>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
 
 # Sidebar functionalities
 def sidebar():
