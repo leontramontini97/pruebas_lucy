@@ -88,7 +88,7 @@ with st.container():
         # Display the centered text box
         st.markdown(
             """
-            <div style='text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px solid #ccc; margin-top: 20px; padding: 10px; width: 100%;'>
+            <div style='text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; margin-top: 5 px; padding: 10px; width: 100%;'>
                 <h2>Hola! Soy LUCY AI</h2>
                 <h5>Tu Asistente Virtual con Inteligencia Artificial</h5>
                 <h5>Estoy aquí para resolver tus dudas!</h5>

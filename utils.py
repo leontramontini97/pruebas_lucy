@@ -19,11 +19,10 @@ import streamlit as st
 
 store = {}
 
-# Replace the API key here
-new_api_key = "sk-Oy5pqa0rUwKdfnl9904qmKpAt2j7yz8cIG3FQzxK0yT3BlbkFJsSE3WcLqAs66bjpKFzmUkBsN6bbBVHFUn-89X8TQwA"  # Replace with your actual API key
+
 
 print(f"OPENAI_API_KEY in Flask app: {new_api_key}")
-llm = ChatOpenAI(model_name='gpt-4o', temperature=1, openai_api_key=new_api_key)  # Updated
+llm = ChatOpenAI(model_name='gpt-4o', temperature=1, openai_api_key=Config.OPENAI_API_KEY)  
 
 def get_session_history(session_id: str) -> BaseChatMessageHistory:
     if session_id not in store:
