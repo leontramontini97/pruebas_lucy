@@ -64,7 +64,7 @@ with st.container():
 
     # Display the image in the center column (col3)
     with cols[5]:  # This is the third column (index 2)
-        st.image("abc1.jpg", use_column_width=False, use_column_width= True)  # Use full width of the column
+        st.image("abc1.jpg",  use_column_width= True)  # Use full width of the column
 
     # Create a three-column layout for the text box
     col1, col2, col3 = st.columns([1, 2, 1])
