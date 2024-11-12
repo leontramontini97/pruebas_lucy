@@ -17,11 +17,13 @@ from config import Config
 from langchain_core.runnables.history import RunnableWithMessageHistory
 import streamlit as st
 
-
 store = {}
 
-print(f"OPENAI_API_KEY in Flask app: {Config.OPENAI_API_KEY}")
-llm = ChatOpenAI(model_name='gpt-4o', temperature=1, openai_api_key=Config.OPENAI_API_KEY)
+# Replace the API key here
+new_api_key = "sk-Oy5pqa0rUwKdfnl9904qmKpAt2j7yz8cIG3FQzxK0yT3BlbkFJsSE3WcLqAs66bjpKFzmUkBsN6bbBVHFUn-89X8TQwA"  # Replace with your actual API key
+
+print(f"OPENAI_API_KEY in Flask app: {new_api_key}")
+llm = ChatOpenAI(model_name='gpt-4o', temperature=1, openai_api_key=new_api_key)  # Updated
 
 def get_session_history(session_id: str) -> BaseChatMessageHistory:
     if session_id not in store:
@@ -35,8 +37,6 @@ def retriever_func(file_path):
     
     logging.info("Initializing retriever...")
     
-   
-        
     loader = PyPDFLoader(file_path=file_path)
     data = loader.load()
         
@@ -48,8 +48,7 @@ def retriever_func(file_path):
     all_splits = text_splitter.split_documents(data)
     
     logging.info(f"Number of documents split: {len(all_splits)}")
-    vectorstore = FAISS.from_documents(documents=all_splits, embedding=OpenAIEmbeddings(openai_api_key=Config.OPENAI_API_KEY))
-        
+    vectorstore = FAISS.from_documents(documents=all_splits, embedding=OpenAIEmbeddings(openai_api_key=new_api_key))  # Updated
     
     retriever = vectorstore.as_retriever(search_type="similarity", search_kwargs={"k": 3})
     logging.info("Retriever initialized successfully.")
@@ -58,11 +57,10 @@ def retriever_func(file_path):
 
 
 contextualize_q_system_prompt = (
-        
-"Dado un historial de chat y la última pregunta del usuario, que podría referirse al contexto en el historial de chat, "
-'formula una pregunta independiente que pueda entenderse sin el historial de chat. NO respondas la pregunta, solo reformúlala '
-"si es necesario y, de lo contrario, devuélvela tal como está."
-            )
+    "Dado un historial de chat y la última pregunta del usuario, que podría referirse al contexto en el historial de chat, "
+    'formula una pregunta independiente que pueda entenderse sin el historial de chat. NO respondas la pregunta, solo reformúlala '
+    "si es necesario y, de lo contrario, devuélvela tal como está."
+)
 
 contextualize_q_prompt = ChatPromptTemplate.from_messages(
                 [
@@ -71,12 +69,6 @@ contextualize_q_prompt = ChatPromptTemplate.from_messages(
                     ("human", "{input}"),
                 ]
             )
-
-
-
-
-
-
 
 system_prompt = (
 'Eres un asistente  especializado en responder preguntas sobre los procedimientos ginecológicos estéticos que ofrece la Dra Abdala, y sobre menopausia e incontinencia (lo que esta en el contexto). '
@@ -108,24 +100,12 @@ qa_prompt = ChatPromptTemplate.from_messages(
 
 question_answer_chain= create_stuff_documents_chain(llm, qa_prompt)
 
-
-
-
-
 retriever= retriever_func('V2.4.pdf')
 
 history_aware_retriever = create_history_aware_retriever(
         llm, retriever, contextualize_q_prompt
         )
 rag_chain= create_retrieval_chain(history_aware_retriever, question_answer_chain)
-
-
-
-
-
-
-
-
 
 prompt = ChatPromptTemplate.from_messages(
     [
@@ -134,9 +114,6 @@ prompt = ChatPromptTemplate.from_messages(
         ("human", "{input}"),
     ]
 )
-
-
-
 
 # Create and store the vectorstore once when the application starts
 
