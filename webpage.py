@@ -60,10 +60,10 @@ os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 
 with st.container():
     # Create a five-column layout for the image
-    cols = st.columns(11)
+    cols = st.columns(9)
 
     # Display the image in the center column (col3)
-    with cols[5]:  # This is the third column (index 2)
+    with cols[4]:  # This is the third column (index 2)
         st.image("logo_lucy_este.png",  use_column_width= True)  # Use full width of the column
 
     # Create a three-column layout for the text box
