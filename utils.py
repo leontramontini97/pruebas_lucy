@@ -47,7 +47,7 @@ def retriever_func(file_path):
     all_splits = text_splitter.split_documents(data)
     
     logging.info(f"Number of documents split: {len(all_splits)}")
-    vectorstore = FAISS.from_documents(documents=all_splits, embedding=OpenAIEmbeddings(openai_api_key=Config.OPENAI_API_KEY))  # Updated
+    vectorstore = FAISS.from_documents(documents=all_splits, embedding=OpenAIEmbeddings(openai_api_key= Config.OPENAI_API_KEY))  # Updated
     
     retriever = vectorstore.as_retriever(search_type="similarity", search_kwargs={"k": 3})
     logging.info("Retriever initialized successfully.")
@@ -99,7 +99,7 @@ qa_prompt = ChatPromptTemplate.from_messages(
 
 question_answer_chain= create_stuff_documents_chain(llm, qa_prompt)
 
-retriever= retriever_func('V2.4.pdf')
+retriever= retriever_func('sanitized_chatbot.pdf')
 
 history_aware_retriever = create_history_aware_retriever(
         llm, retriever, contextualize_q_prompt

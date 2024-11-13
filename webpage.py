@@ -8,10 +8,7 @@ from langchain_core.runnables.history import RunnableWithMessageHistory
 from PIL import Image
 import re
 
-def sanitize_text(text):
-    # Remove HTML tags
-    clean_text = re.sub(r'<.*?>', '', text)
-    return clean_text
+
 
 
 # Set up logging configuration
@@ -48,14 +45,10 @@ else:
         # Reset session if the user has been inactive for longer than the timeout
         reset_session()
     else:
-        # Update the last interaction time
         st.session_state.last_interaction = current_time
 
 
 
-
-
-# Setup page configuration
 st.set_page_config(page_title="LUCY", layout="wide", page_icon='👩‍⚕️')
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 
@@ -63,21 +56,19 @@ os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 
 
 with st.container():
-    # Create a five-column layout for the image
-    cols = st.columns(9)
-
-    # Display the image in the center column (col3)
-    with cols[4]:  # This is the third column (index 2)
-        st.image("logo_lucy_este.png",  use_column_width= True)  # Use full width of the column
+  
+      # Center column for the image
+      # Use full width of the column
 
     # Create a three-column layout for the text box
     col1, col2, col3 = st.columns([1, 2, 1])
 
     with col2:
-        # Display the centered text box
+        # Display the centered text box with reduced spacing
+        st.image("logo_lucy_este.png", width = 100, use_column_width= True)
         st.markdown(
             """
-            <div style='text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; margin-top: 0px; padding: 10px; width: 100%;'>
+            <div style='text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; margin-top: -10px; padding: 0px; width: 100%;'>
                 <h2>Hola! Soy LUCY AI</h2>
                 <h5>Tu Asistente Virtual con </h5>  
                 <h5>Inteligencia Artificial </h5> 
@@ -86,6 +77,7 @@ with st.container():
             """,
             unsafe_allow_html=True
         )
+
 
 # Sidebar functionalities
 def sidebar():
@@ -139,21 +131,25 @@ def sidebar():
 
 # Main chat application
 def chat():
-    
+    inline_style = "font-size: 18px !important; line-height: 1.6 !important; font-family: Arial, sans-serif !important; font-weight: normal !important;"
+
     st.markdown(
     """<style> 
     .response-text { 
-        font-size: 18px !important;  /* Set a consistent font size */
-        line-height: 1.6;  /* Adjust line height for readability */
+        font-size: 18px !important; 
+        line-height: 1.6; 
+        font-family: Arial, sans-serif !important;
+        font-weight: normal !important;
     } 
     </style>""",
     unsafe_allow_html=True
 )
-    # Display existing chat messages
+  
     for message in st.session_state.messages:
         with st.chat_message(message["role"]):
-            sanitized_content = sanitize_text(message["content"])  # Sanitize the content
-            st.markdown(f"<div class='response-text'>{sanitized_content}</div>", unsafe_allow_html=True)
+            content = message["content"]
+            st.markdown(f"<div style='{inline_style}'>{content}</div>", unsafe_allow_html=True)
+
 
     # Chat input field for user input
     user_message = st.chat_input("Escribe tu mensaje aquí...")
@@ -162,7 +158,7 @@ def chat():
         # Store and display the user message
         st.session_state.messages.append({"role": "user", "content": user_message})
         with st.chat_message("user"):
-            st.markdown(f"<div class='response-text'>{user_message}</div>", unsafe_allow_html=True)
+            st.markdown(f"<div style='{inline_style}'>{user_message}</div>", unsafe_allow_html=True)
 
       
         common_responses = {
@@ -182,11 +178,11 @@ def chat():
         response_text = common_responses.get(user_message.lower(), None)
         if response_text:
             with st.chat_message("assistant"):
-                st.markdown(f"<div class='response-text'>{response_text}</div>", unsafe_allow_html=True)
+                st.markdown(f"<div style='{inline_style}'>{response_text}</div>", unsafe_allow_html=True)
         else:
             with st.chat_message("assistant"):
                 response_placeholder = st.empty()  # Placeholder for the response
-                response_placeholder.markdown(f"<div class='response-text'> 🤔 Estoy pensando... </div>", unsafe_allow_html=True)
+                response_placeholder.markdown(f"<div style='{inline_style}'> 🤔 Estoy pensando... </div>", unsafe_allow_html=True)
 
             try:
                 print("I should see this in the terminal")
@@ -203,7 +199,7 @@ def chat():
                 if not docs:
                     raise ValueError("No documents found by retriever.")
 
-                context_text = "\n\n".join([doc.page_content for doc in docs])
+                context_text = "\n\n".join([(doc.page_content) for doc in docs])
 
                 response = conversational_rag_chain.invoke(
                     {"context": context_text, "input": user_message},
@@ -227,7 +223,7 @@ def chat():
                 # Display the assistant's response
                 
             
-            response_placeholder.markdown(f"<div class='response-text'>{response_text}</div>", unsafe_allow_html=True)
+            response_placeholder.markdown(f"<div style='{inline_style}'>{response_text}</div>", unsafe_allow_html=True)
 
            
 
@@ -260,8 +256,4 @@ def main():
 if __name__ == "__main__":
     main()
 
-# Function to sanitize text by removing HTML tags
-def sanitize_text(text):
-    # Remove HTML tags
-    clean_text = re.sub(r'<.*?>', '', text)
-    return clean_text
+
