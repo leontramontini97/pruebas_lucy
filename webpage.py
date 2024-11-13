@@ -148,7 +148,7 @@ def chat():
     # Display existing chat messages
     for message in st.session_state.messages:
         with st.chat_message(message["role"]):
-            st.markdown(message["content"])
+             st.markdown(f"<div class='response-text'>{message['content']}</div>", unsafe_allow_html=True)
 
     # Chat input field for user input
     user_message = st.chat_input("Escribe tu mensaje aquí...")
@@ -236,14 +236,17 @@ def chat():
     # Add disclaimer at the bottom of the chat if no messages yet
     
     if len(st.session_state.messages)== 0:
-        st.markdown(
-        """
+      st.markdown(
+    """
+    <div style='font-size: 18px; line-height: 1.6;'>  <!-- Adjust the font size here -->
         ---
-        **Disclaimer:**  
-        Las respuestas proporcionadas por este asistente virtual son de carácter informativo y no reemplazan una consulta médica. Para un diagnóstico o tratamiento adecuado, por favor consulta a la Dra. Lucy Abdala.
-        """
-        )
-    
+        <strong>Disclaimer:</strong>  
+        Las respuestas proporcionadas por este asistente virtual son de carácter informativo y no reemplazan una consulta médica. 
+        Para un diagnóstico o tratamiento adecuado, por favor consulta a la Dra. Lucy Abdala.
+    </div>
+    """,
+    unsafe_allow_html=True
+)
     
 # Main App
 def main():
