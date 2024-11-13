@@ -8,7 +8,10 @@ from langchain_core.runnables.history import RunnableWithMessageHistory
 from PIL import Image
 import re
 
-
+def sanitize_text(text):
+    # Remove HTML tags
+    clean_text = re.sub(r'<.*?>', '', text)
+    return clean_text
 
 
 # Set up logging configuration
@@ -74,7 +77,7 @@ with st.container():
         # Display the centered text box
         st.markdown(
             """
-            <div style='text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; margin-top: 5 px; padding: 10px; width: 100%;'>
+            <div style='text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; margin-top: 1 px; padding: 10px; width: 100%;'>
                 <h2>Hola! Soy LUCY AI</h2>
                 <h5>Tu Asistente Virtual con </h5>  
                 <h5>Inteligencia Artificial </h5> 
