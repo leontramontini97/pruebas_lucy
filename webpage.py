@@ -6,6 +6,7 @@ import logging
 from utils import retriever, get_session_history, rag_chain
 from langchain_core.runnables.history import RunnableWithMessageHistory
 from PIL import Image
+import re
 
 
 
@@ -139,8 +140,8 @@ def chat():
     st.markdown(
     """<style> 
     .response-text { 
-        font-size: 18px; 
-        line-height: 1.6; 
+        font-size: 18px !important;  /* Set a consistent font size */
+        line-height: 1.6;  /* Adjust line height for readability */
     } 
     </style>""",
     unsafe_allow_html=True
@@ -148,7 +149,8 @@ def chat():
     # Display existing chat messages
     for message in st.session_state.messages:
         with st.chat_message(message["role"]):
-             st.markdown(f"<div class='response-text'>{message['content']}</div>", unsafe_allow_html=True)
+            sanitized_content = sanitize_text(message["content"])  # Sanitize the content
+            st.markdown(f"<div class='response-text'>{sanitized_content}</div>", unsafe_allow_html=True)
 
     # Chat input field for user input
     user_message = st.chat_input("Escribe tu mensaje aquí...")
@@ -255,3 +257,9 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# Function to sanitize text by removing HTML tags
+def sanitize_text(text):
+    # Remove HTML tags
+    clean_text = re.sub(r'<.*?>', '', text)
+    return clean_text
