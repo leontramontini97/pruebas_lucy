@@ -77,7 +77,7 @@ with st.container():
         # Display the centered text box
         st.markdown(
             """
-            <div style='text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; margin-top: 1 px; padding: 10px; width: 100%;'>
+            <div style='text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; margin-top: 0px; padding: 10px; width: 100%;'>
                 <h2>Hola! Soy LUCY AI</h2>
                 <h5>Tu Asistente Virtual con </h5>  
                 <h5>Inteligencia Artificial </h5> 
@@ -243,8 +243,7 @@ def chat():
     if len(st.session_state.messages)== 0:
       st.markdown(
     """
-    <div style='font-size: 18px; line-height: 1.6;'>  <!-- Adjust the font size here -->
-        ---
+    <div style='font-size: 18px; line-height: 1.6;'>  
         <strong>Disclaimer:</strong>  
         Las respuestas proporcionadas por este asistente virtual son de carácter informativo y no reemplazan una consulta médica. 
         Para un diagnóstico o tratamiento adecuado, por favor consulta a la Dra. Lucy Abdala.
