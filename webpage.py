@@ -94,13 +94,13 @@ def sidebar():
     """
     
     
-    📞 <a href="https://wa.me/573106391610" target="_blank">Estética Íntima</a>  <br>
+    ▶️ <a href="https://wa.me/573106391610" target="_blank">Estética Íntima</a>  <br>
 
-    📞 <a href="https://wa.me/573106336514" target="_blank">Ginecología</a>  <br>
+    ▶️ <a href="https://wa.me/573106336514" target="_blank">Ginecología</a>  <br>
     
-    📪 lucyabdala@gmail.com  <br>
+    ▶️ lucyabdala@gmail.com  <br>
      
-    💻 [ginecologalucyabdala.com](https://ginecologalucyabdala.com/)  <br>
+    ▶️ [ginecologalucyabdala.com](https://ginecologalucyabdala.com/)  <br>
 
     📍 Clínica Portoazul Aúna Cons. 414
        Barranquilla, Colombia
