@@ -22,7 +22,7 @@ store = {}
 
 
 
-llm = ChatOpenAI(model_name='gpt-4o', temperature=1, openai_api_key=Config.OPENAI_API_KEY)  
+llm = ChatOpenAI(model_name='gpt-4o', temperature=1, openai_api_key= Config.OPENAI_API_KEY)  
 
 def get_session_history(session_id: str) -> BaseChatMessageHistory:
     if session_id not in store:

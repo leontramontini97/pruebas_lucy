@@ -65,7 +65,7 @@ with st.container():
 
     with col2:
         # Display the centered text box with reduced spacing
-        st.image("logo_lucy_este.png", width = 100, use_column_width= True)
+        st.image("logo_lucy_hd.jpeg", width = 100, use_column_width= True)
         st.markdown(
             """
             <div style='text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; margin-top: -10px; padding: 0px; width: 100%;'>
