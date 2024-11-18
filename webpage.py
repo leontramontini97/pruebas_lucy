@@ -69,10 +69,10 @@ with st.container():
         st.markdown(
             """
             <div style='text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; margin-top: -10px; padding: 0px; width: 100%;'>
-                <h2>Hola! Soy LUCY AI</h2>
+                <h2>¡Hola! Soy LUCY AI</h2>
                 <h5>Tu Asistente Virtual con </h5>  
                 <h5>Inteligencia Artificial </h5> 
-                <h5>Estoy aquí para resolver tus dudas!</h5>
+                <h5>¡Estoy aquí para resolver tus dudas!</h5>
             </div>
             """,
             unsafe_allow_html=True
