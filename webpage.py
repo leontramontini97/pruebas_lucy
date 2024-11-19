@@ -49,7 +49,7 @@ else:
 
 
 
-st.set_page_config(page_title="LUCY", layout="wide", page_icon='👩‍⚕️')
+st.set_page_config(page_title="LUCY AI", layout="wide", page_icon='❣️')
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 
 
@@ -182,7 +182,7 @@ def chat():
         else:
             with st.chat_message("assistant"):
                 response_placeholder = st.empty()  # Placeholder for the response
-                response_placeholder.markdown(f"<div style='{inline_style}'> 🤔 Estoy pensando... </div>", unsafe_allow_html=True)
+                response_placeholder.markdown(f"<div style='{inline_style}'> ... </div>", unsafe_allow_html=True)
 
             try:
                 print("I should see this in the terminal")
